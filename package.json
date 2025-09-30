@@ -1,0 +1,33 @@
+{
+  "name": "sa-qa",
+  "version": "1.0.0",
+  "description": "A modular, future-proof Cypress Automation Framework designed for scalable test automation across web applications.  \r Built with Page Object Models, API Testing, E2E Scenarios, and CI/CD Integration, this framework is reusable across multiple projects.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "example": "examples",
+    "test": "tests"
+  },
+  "scripts": {
+  "test:open": "cypress open",
+  "test:run": "cypress run",
+  "lint": "eslint '**/*.ts'",
+  "format": "prettier --write '**/*.ts'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cypress/webpack-dev-server": "^5.1.2",
+    "cypress": "^15.3.0",
+    "cypress-axe": "^1.7.0",
+    "cypress-file-upload": "^5.0.8",
+    "eslint": "^9.36.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "mochawesome": "^7.1.4",
+    "prettier": "^3.6.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
+}
