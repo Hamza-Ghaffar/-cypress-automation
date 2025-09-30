@@ -1,0 +1,10 @@
+
+# Ignore all PDF files
+*.pdf
+
+# Ignore specific directories and files
+node_modules/
+reports/
+cypress/videos/
+cypress/screenshots/
+.env
