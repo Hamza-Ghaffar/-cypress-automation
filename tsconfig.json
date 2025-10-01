@@ -1,52 +1,48 @@
 {
   // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
-    "target": "ES6",
-    "lib": ["es6", "dom"],
+    // ✅ Modern JS target for Cypress + browser tests
+    "target": "ESNext",
+    "lib": ["ESNext", "DOM"],
+
+    // ✅ Cypress + Node types
     "types": ["cypress", "node"],
-    "moduleResolution": "node",
+
+    // ✅ Module system: ESM (recommended for TS + Cypress)
+    "module": "ESNext",
+    "moduleResolution": "Node",
+
+    // ✅ Ensures ES imports/exports just work
     "esModuleInterop": true,
-    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+
+    // ✅ Strictness for catching bugs early
     "strict": true,
-    // File Layout
-    // "rootDir": "./src",
-    // "outDir": "./dist",
+    "skipLibCheck": true,
 
-    // Environment Settings
-    // See also https://aka.ms/tsconfig/module
-    "module": "nodenext",
-    //"target": "esnext",
-    //"types": [],
-    // For nodejs:
-    // "lib": ["esnext"],
-    // "types": ["node"],
-    // and npm install -D @types/node
-
-    // Other Outputs
+    // ✅ Outputs (optional since Cypress doesn’t compile to JS)
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
 
-    // Stricter Typechecking Options
+    // ✅ Stronger typing options
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
 
-    // Style Options
-    // "noImplicitReturns": true,
-    // "noImplicitOverride": true,
-    // "noUnusedLocals": true,
-    // "noUnusedParameters": true,
-    // "noFallthroughCasesInSwitch": true,
-    // "noPropertyAccessFromIndexSignature": true,
-
-    // Recommended Options
-    //"strict": true,
-    "jsx": "react-jsx",
-    "verbatimModuleSyntax": true,
+    // ✅ Module detection simplified (no conflicts)
     "isolatedModules": true,
-    "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
-    //"skipLibCheck": true,
+
+    // ❌ Removed "verbatimModuleSyntax" (causes your export error)
+    // ❌ Removed "noUncheckedSideEffectImports" (not needed now)
+
+    // ✅ For React JSX support (if ever needed in future)
+    "jsx": "react-jsx"
   },
-  "include": ["**/*.ts"],
+  "include": [
+  "framework/**/*.ts",
+  "framework/**/*.d.ts",
+  "modules/**/*.ts",
+  "tests/**/*.ts"
+]
 }
