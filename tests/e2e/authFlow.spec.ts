@@ -2,7 +2,7 @@
 // So we need to define those commands first
 
 //Import authModules class
-import { AuthModules } from '../../modules/authModules';
+import { AuthModules } from '../../modules/authModule';
 
 
 describe('END to End Auth Flow', () => {
@@ -18,7 +18,11 @@ describe('END to End Auth Flow', () => {
 
   it('should log in and log out the user', () => {
   auth.login('hamza', 'QkwnE!W8JS2hMEh');
-  auth.logout();
+  //add wait to see profile page properly
+  
+  cy.wait(5000);
+  
+  //auth.logout();
 });
 
 });

@@ -11,6 +11,10 @@ declare global {
       LOGIN(username: string, password: string): Chainable<void>;
       SIGNUP(firstname: string, lastname: string, username: string, password: string): Chainable<void>;
       LOGOUT(): Chainable<void>;
+      findTableRow(tableSelector: string, cellText: string): Chainable<JQuery<HTMLElement>>;
+     
+
+
     }
   }
 }

@@ -1,17 +1,27 @@
-import { defineConfig } from 'cypress';
+import { defineConfig } from 'cypress'
 
 export default defineConfig({
   e2e: {
     baseUrl: 'https://demoqa.com',
-    supportFile: 'framework/support.ts',
     specPattern: 'tests/e2e/**/*.spec.ts',
+    supportFile: 'framework/support.ts',
     setupNodeEvents(on, config) {
-      // configure plugins here if needed
+      // register reporters or other node events here
+      return config
     },
-    viewportWidth: 1420,    // desired width
-    viewportHeight: 1080     // desired height
+    viewportWidth: 1480,
+    viewportHeight: 1280,
+    video: false,
+    retries: { runMode: 1, openMode: 0 }
   },
-  video: false,
-  screenshotsFolder: 'reports/screenshots',
-  videosFolder: 'reports/videos'
-});
+  reporter: 'mochawesome',
+  reporterOptions: {
+    reportDir: 'reports',
+    overwrite: false,
+    html: true,
+    json: true
+  },
+  env: {
+    DEMOQA_WAIT: 1000
+  }
+})

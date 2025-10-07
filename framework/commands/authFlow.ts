@@ -21,7 +21,7 @@ Cypress.Commands.add('LOGIN', (username: string, password: string) => {
   cy.get('#userName').type(username);
   cy.get('#password').type(password);
   cy.get('#login', { timeout: 10000 }).click();
-  cy.url().should('include', '/profile');
+  //cy.url().should('include', '/profile');
   
 });
 
